@@ -1,0 +1,23 @@
+[package]
+name = "chicago_project_zero_fatalities_parser"
+version = "0.1.0"
+edition = "2024"
+authors = ["Diego Enriquez-Serrano <diego@diegoenriquezserrano.dev>"]
+license = "GPL-3.0-or-later"
+description = "A parser for json data found at 'Vision Zero Chicago Traffic Fatalities | Chicago Data Portal' into GeoJson without unecessary properties."
+readme = "README.md"
+homepage = "https://www.diegoenriquezserrano.dev/vision-zero-chicago-map"
+repository = "https://github.com/diegoEnriquezSerrano/chicago_project_zero_fatalities_parser"
+keywords = ["cli", "parser", "geojson", "json"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+geojson = "0.24.2"
+serde_json = "1.0.140"
+serde = { version = "1", features = ["derive"] }
+clap = { version = "4.5.40", features = ["derive"] }
+anyhow = "1.0.98"
+
+[dev-dependencies]
+assert_cmd = "2.0.17"
+predicates = "3.1.3"
