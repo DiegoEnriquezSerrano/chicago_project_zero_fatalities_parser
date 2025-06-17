@@ -16,13 +16,13 @@ fn main() -> Result<()> {
     let geo_json_result: String = match parse_file(args.input_path.display().to_string()) {
         Ok(content) => content,
         Err(error) => {
-            return Err(error.into());
+            return Err(error);
         }
     };
 
     let mut file = File::create("output/output.json").expect("Failed to create file.");
     file.write_all(geo_json_result.as_bytes())
-        .with_context(|| format!("failed to write to output file"))?;
+        .with_context(|| format!("failed to write geojson to file: {}", geo_json_result))?;
 
     Ok(())
 }
