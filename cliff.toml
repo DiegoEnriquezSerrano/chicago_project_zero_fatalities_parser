@@ -2,7 +2,7 @@
 # https://git-cliff.org/docs/configuration
 
 # [remote.github]
-owner = "diegoEnriquezSerrano"
+owner = "DiegoEnriquezSerrano"
 repo = "chicago_project_sero_fatalities_parser"
 token = ""
 
