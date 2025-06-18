@@ -3,7 +3,7 @@
 
 [remote.github]
 owner = "DiegoEnriquezSerrano"
-repo = "chicago_project_sero_fatalities_parser"
+repo = "chicago_project_zero_fatalities_parser"
 token = ""
 
 [changelog]
