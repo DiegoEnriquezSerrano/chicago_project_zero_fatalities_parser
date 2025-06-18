@@ -18,12 +18,12 @@ pub struct InputJson<'a> {
 pub fn parse_file(filename: String) -> Result<String, anyhow::Error> {
     let json = std::fs::read_to_string(&filename)
         .with_context(|| format!("could not read file `{}`", filename))?;
-
-    let input_vec = from_str::<Vec<InputJson>>(&json).expect("Failed to parse JSON from file.");
+    let input_vec = from_str::<Vec<InputJson>>(&json)
+        .with_context(|| format!("could not json from `{}`", json))?;
     let feature_vec = transform_to_geojson_feature_vec(input_vec);
     let geojson = make_feature_collection(feature_vec);
 
-    return to_string(&geojson).with_context(|| format!("Failed to convert file to JSON"));
+    to_string(&geojson).with_context(|| format!("Failed to parse JSON from: {}", geojson))
 }
 
 fn transform_to_geojson_feature_vec(input_vec: Vec<InputJson>) -> Vec<Feature> {
@@ -34,7 +34,7 @@ fn transform_to_geojson_feature_vec(input_vec: Vec<InputJson>) -> Vec<Feature> {
             bbox: None,
             geometry: Some(input_entry.geometry.clone()),
             id: None,
-            properties: Some(geo_properties_from_input_json(&input_entry)),
+            properties: Some(geo_properties_from_input_json(input_entry)),
             foreign_members: None,
         });
 
@@ -43,7 +43,7 @@ fn transform_to_geojson_feature_vec(input_vec: Vec<InputJson>) -> Vec<Feature> {
         feature_vec.push(feature);
     }
 
-    return feature_vec;
+    feature_vec
 }
 
 fn make_feature_collection(input_features: Vec<Feature>) -> GeoJson {
@@ -53,7 +53,7 @@ fn make_feature_collection(input_features: Vec<Feature>) -> GeoJson {
         foreign_members: None,
     };
 
-    return GeoJson::from(feature_collection);
+    GeoJson::from(feature_collection)
 }
 
 fn geo_properties_from_input_json(input_json: &InputJson) -> JsonObject {
@@ -61,7 +61,7 @@ fn geo_properties_from_input_json(input_json: &InputJson) -> JsonObject {
 
     properties.insert(
         "crash_circumstances".to_string(),
-        JsonValue::from(input_json.crash_circumstances.as_ref().map(String::as_str)),
+        JsonValue::from(input_json.crash_circumstances.as_deref()),
     );
     properties.insert(
         "crash_date".to_string(),
@@ -79,5 +79,5 @@ fn geo_properties_from_input_json(input_json: &InputJson) -> JsonObject {
     );
     properties.insert("victim".to_string(), JsonValue::from(input_json.victim));
 
-    return properties;
+    properties
 }
