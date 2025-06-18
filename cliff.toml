@@ -4,7 +4,6 @@
 [remote.github]
 owner = "DiegoEnriquezSerrano"
 repo = "chicago_project_zero_fatalities_parser"
-token = ""
 
 [changelog]
 # A Tera template to be rendered for each release in the changelog.
