@@ -1,3 +1,7 @@
+[![Rust CI](https://github.com/DiegoEnriquezSerrano/chicago_project_zero_fatalities_parser/actions/workflows/general.yml/badge.svg)](https://github.com/DiegoEnriquezSerrano/chicago_project_zero_fatalities_parser/actions/workflows/general.yml)
+[![Security audit](https://github.com/DiegoEnriquezSerrano/chicago_project_zero_fatalities_parser/actions/workflows/audit.yml/badge.svg)](https://github.com/DiegoEnriquezSerrano/chicago_project_zero_fatalities_parser/actions/workflows/audit.yml)
+[![Continuous Deployment](https://github.com/DiegoEnriquezSerrano/chicago_project_zero_fatalities_parser/actions/workflows/release-plz.yml/badge.svg)](https://github.com/DiegoEnriquezSerrano/chicago_project_zero_fatalities_parser/actions/workflows/release-plz.yml)
+
 # chicago_project_zero_fatalities_parser
 
 ## Description
