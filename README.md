@@ -22,12 +22,12 @@ cargo install chicago_project_zero_fatalities_parser
 
 ## Usage
 
-The program requires the path of the source json to be provided as an argument. The parsed data will be written to a file named `output.json` located in an `output` subdirectory of the installation path.
+The program requires no arguments to run. It will pull the data fresh from the Chicago Data API portal and parse the necessary data. The parsed data will be written to a file named `output.json` located in an `output` subdirectory of the execution path.
 
 **example**
 
 ```
-cargo run -- /source/to/file.json
+cargo run
 ```
 
 ## License
