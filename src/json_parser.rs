@@ -81,21 +81,21 @@ struct VisionZeroData {
     victim: String,
 }
 
-impl Into<JsonObject> for VisionZeroData {
-    fn into(self) -> JsonObject {
+impl From<VisionZeroData> for JsonObject {
+    fn from(value: VisionZeroData) -> Self {
         let mut properties = JsonObject::new();
         properties.insert(
             "crash_circumstances".to_string(),
-            JsonValue::from(self.crash_circumstances.as_deref()),
+            JsonValue::from(value.crash_circumstances.as_deref()),
         );
-        properties.insert("crash_date".to_string(), Value::from(self.crash_date));
+        properties.insert("crash_date".to_string(), Value::from(value.crash_date));
         properties.insert(
             "crash_location".to_string(),
-            Value::from(self.crash_location),
+            Value::from(value.crash_location),
         );
-        properties.insert("latitude".to_string(), Value::from(self.latitude));
-        properties.insert("longitude".to_string(), Value::from(self.longitude));
-        properties.insert("victim".to_string(), Value::from(self.victim));
+        properties.insert("latitude".to_string(), Value::from(value.latitude));
+        properties.insert("longitude".to_string(), Value::from(value.longitude));
+        properties.insert("victim".to_string(), Value::from(value.victim));
         properties
     }
 }
