@@ -6,6 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## 0.1.5 - 2026-02-27
+### Other
+- Merge pull request #64 from DiegoEnriquezSerrano/dependabot/github_actions/actions/download-artifact-8
+- Bump actions/upload-artifact from 6 to 7
+- Bump anyhow from 1.0.101 to 1.0.102
+- Bump clap from 4.5.59 to 4.5.60
+- Bump anyhow from 1.0.100 to 1.0.101
+- Merge pull request #57 from DiegoEnriquezSerrano/dependabot/cargo/reqwest-0.13.2
+- Merge pull request #59 from DiegoEnriquezSerrano/dependabot/cargo/predicates-3.1.4
+- Bump clap from 4.5.54 to 4.5.59
+- Bump bytes
+- Bump MarcoIeni/release-plz-action from 0.5.121 to 0.5.124
+- Bump MarcoIeni/release-plz-action from 0.5.120 to 0.5.121
+
 ## 0.1.4 - 2026-01-06
 ### Other
 - Bumps assert cmd crate
