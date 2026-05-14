@@ -1,3 +1,9 @@
+> [!WARNING]
+> This repository will become inactive as of May 14, 2026.
+> Future project maintenance will be tracked [here](https://codeberg.org/diegoenriquezserrano/chicago_vision_zero_fatalities_parser)
+
+
+
 [![Rust CI](https://github.com/DiegoEnriquezSerrano/chicago_project_zero_fatalities_parser/actions/workflows/general.yml/badge.svg)](https://github.com/DiegoEnriquezSerrano/chicago_project_zero_fatalities_parser/actions/workflows/general.yml)
 [![Security audit](https://github.com/DiegoEnriquezSerrano/chicago_project_zero_fatalities_parser/actions/workflows/audit.yml/badge.svg)](https://github.com/DiegoEnriquezSerrano/chicago_project_zero_fatalities_parser/actions/workflows/audit.yml)
 [![Continuous Deployment](https://github.com/DiegoEnriquezSerrano/chicago_project_zero_fatalities_parser/actions/workflows/release-plz.yml/badge.svg)](https://github.com/DiegoEnriquezSerrano/chicago_project_zero_fatalities_parser/actions/workflows/release-plz.yml)
